@@ -1,0 +1,113 @@
+.down-arrow-icon {
+    width: 0.625rem;
+    height: 0.625rem;
+    background-color: transparent;
+    border-style: solid;
+    border-color: black;
+    border-image: initial;
+    border-width: 0px 2px 2px 0px;
+    display: inline-block;
+    padding: .3rem;
+    transform: rotate(45deg);
+}
+
+
+/* next-arrow-icon: start */
+.next-arrow-icon {
+    border: 2px solid #777;
+    border-radius: 100%;
+    width: 0.781rem;
+    height: 0.781rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.313rem;
+    position: relative;
+}
+
+.next-arrow-icon:after {
+    content: "";
+    width: .030rem;
+    height: 0.219rem;
+    background-color: transparent;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(40deg);
+    -webkit-transform: rotate(40deg);
+    margin-right: .15rem;
+    top: 0;
+    position: absolute;
+    bottom: .25rem;
+    margin: auto;
+}
+
+/* next-arrow-icon: end */
+
+
+/* tick-icon: start */
+.tick-icon {
+    width: 0.781rem;
+    height: 1.30rem;
+    background-color: transparent;
+    display: inline-block;
+    position: relative;
+}
+
+.tick-icon:after {
+    content: "";
+    border: 1px solid #555;
+    transform: rotate(-45deg);
+    position: absolute;
+    width: 1.063rem;
+    top: 0.406rem;
+    left: .40rem;
+}
+
+.tick-icon:before {
+    content: "";
+    border: 1px solid #555;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: .3rem;
+    bottom: 0;
+    height: .75rem;
+    top: .55rem;
+}
+
+/* tick: end */
+
+/* close-icon : start */
+.close-icon {
+    width: 0.625rem;
+    height: 0.625rem;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-icon:after {
+    content: '';
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: all 0.25s ease 0s;
+    border: 1px solid #000;
+    transform: rotate(-45deg);
+}
+
+.close-icon:before {
+    content: '';
+    transform: rotate(45deg);
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    border: 1px solid #000;
+}
+
+/* close-icon: end */

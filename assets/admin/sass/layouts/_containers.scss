@@ -1,0 +1,182 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use 'sass:map';
+
+/* Main Containers: Start */
+
+.container {
+    padding-left: 0.781rem;
+    padding-right: 0.781rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100% !important;
+
+    @include xl-min {
+        width: 1170px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* Main Containers: End */
+
+/* Content Section Top & Bottom Padding: Start */
+
+.content-section {
+    // border: 1px solid green;
+    padding-top: map.get($content-section-t-b-p, $key: 'xs');
+    padding-bottom: map.get($content-section-t-b-p, $key: 'xs');
+
+    @include sm-min {
+        padding-top: map.get($map: $content-section-t-b-p, $key: 'sm');
+        padding-bottom: map.get($map: $content-section-t-b-p, $key: 'sm');
+    }
+
+    @include md-min {
+        padding-top: map.get($map: $content-section-t-b-p, $key: 'md');
+        padding-bottom: map.get($map: $content-section-t-b-p, $key: 'md');
+    }
+
+    @include lg-min {
+        padding-top: map.get($map: $content-section-t-b-p, $key: 'lg');
+        padding-bottom: map.get($map: $content-section-t-b-p, $key: 'lg');
+    }
+
+    @include xl-min {
+        padding-top: map.get($map: $content-section-t-b-p, $key: 'xl');
+        padding-bottom: map.get($map: $content-section-t-b-p, $key: 'xl');
+    }
+}
+
+/* Content Section Top & Bottom Padding: End */
+
+/* Content Section Padding Top Half: Start */
+
+.content-section-p-t-h {
+    // border: 1px solid green;
+    padding-top: calc(map.get($content-section-t-b-p, 'xs')/2);
+
+    @include sm-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'sm')/2);
+    }
+
+    @include md-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'md')/2);
+    }
+
+    @include lg-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'lg')/2);
+    }
+
+    @include xl-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'xl')/2);
+    }
+}
+
+/* Content Section Padding Top Half: End */
+
+/* Content Section Padding Bottom Half: Start */
+
+.content-section-p-b-h {
+    border: 1px solid green;
+    padding-bottom: calc(map.get($content-section-t-b-p, 'xs')/2);
+
+    @include sm-min {
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'sm')/2);
+    }
+
+    @include md-min {
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'md')/2);
+    }
+
+    @include lg-min {
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'lg')/2);
+    }
+
+    @include xl-min {
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'xl')/2);
+    }
+}
+
+/* Content Section Padding Bottom Half: End */
+
+/* Content Section Padding Top & Bottom Half: Start */
+
+.content-section-p-t-b-h {
+    border: 1px solid green;
+    padding-top: map.get($content-section-t-b-p, 'xs');
+    padding-bottom: map.get($content-section-t-b-p, 'xs');
+
+    @include sm-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'sm')/2);
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'sm')/2);
+    }
+
+    @include md-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'md')/2);
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'md')/2);
+    }
+
+    @include lg-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'lg')/2);
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'lg')/2);
+    }
+
+    @include xl-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'xl')/2);
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'xl')/2);
+    }
+}
+
+/* Content Section Padding Top & Bottom Half: End */
+
+/* Content Section Padding Top None: Start */
+
+.content-section-p-t-n {
+    padding-top: 0;
+}
+
+/* Content Section Padding Top None: End */
+
+/* Content Section Padding Bottom None: Start */
+.content-section-p-b-n {
+    padding-bottom: 0;
+}
+
+/* Content Section Padding Bottom None: End */
+
+/* Content Section Padding Top & Bottom None: Start */
+
+.content-section-p-t-b-n {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Content Section Padding Top & Bottom None: End */
+
+.doube-column-layout {
+    &__container {
+        display: grid;
+        gap: 0.781rem;
+
+        @include xl-min {
+            grid-template-columns: 81rem 1fr;
+            gap: 1.875rem;
+        }
+    }
+
+    &__col1 {
+        display: grid;
+        gap: 2.5rem;
+
+        @include xl-min {
+            gap: 3.125rem;
+        }
+    }
+}
+
+
+.site-content {
+    position: relative;
+}

@@ -1,0 +1,44 @@
+ADMIN MODULES
+---------------------------------------------------------
+//1. COUNTRY
+//2. TAX
+---------------------------------------------------------
+OWNER MODULES
+--------------------------------------------------------
+//1. COUNTRY
+//2. TAX
+#########################################################
+//1. COUNTRY
+*********************************************************
+//1.1 ) Add your country through Country menu
+        VIEW       : 
+        CONTROLLER :
+        MODEL      :
+        PARAMETERS :
+        REMARKS    : 
+//1.2 ) Add GST OR VAT based on your country through tax menu
+        VIEW       : 
+        CONTROLLER :
+        MODEL      :
+        PARAMETERS :
+        REMARKS    : 
+//1.3 ) When create a store.there an option for enter number of tables.After creating store automatically create table rows based on number of table within store_table
+//1.4 ) When select country automatically populate gst or tax dropdown.
+//2. TAX
+*********************************************************
+
+
+#########################################################
+OWNER
+#########################################################
+
+
+
+
+
+#########################################################
+WEBSITE
+#########################################################
+
+
+testttt

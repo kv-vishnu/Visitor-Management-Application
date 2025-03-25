@@ -1,0 +1,205 @@
+@use '../abstracts/variables' as *;
+
+/* --------------------------- Media Queries: Start --------------------------- */
+
+@mixin sm-min {
+    @media only screen and (min-width:$sm) {
+        @content;
+    }
+}
+
+@mixin md-min {
+    @media only screen and (min-width:$md) {
+        @content;
+    }
+}
+
+@mixin lg-min {
+    @media only screen and (min-width:$lg) {
+        @content;
+    }
+}
+
+@mixin xl-min {
+    @media only screen and (min-width:$xl) {
+        @content;
+    }
+}
+
+@mixin xxl-min {
+    @media only screen and (min-width:#{$xxl}) {
+        @content;
+    }
+}
+
+/* --------------------------- Media Queries: End --------------------------- */
+
+
+/* Outlines: Start */
+
+@mixin outline1 {
+    border: 1px solid red;
+}
+
+/* Outlines: End */
+
+/* --------------------------- Vendor Prefix: Start --------------------------- */
+
+/* Flex: Start */
+
+/* 1.Flex Container Properties */
+
+//display-flex
+@mixin display-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+// display-inline-flex
+@mixin display-inline-flex {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+//flex-direction
+@mixin flex-direction($direction) {
+    @if $direction ==column {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column
+    }
+
+    @else if $direction==column-reverse {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+
+    @else if $direction==row-reverse {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+
+    @else if $direction==initial {
+        -webkit-box-orient: initial;
+        -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+        flex-direction: initial
+    }
+
+    @else if $direction==inherit {
+        -webkit-box-orient: inherit;
+        -webkit-box-direction: inherit;
+        -ms-flex-direction: inherit;
+        flex-direction: inherit;
+    }
+
+    @else {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row
+    }
+}
+
+//flex-wrap
+//flex-flow
+//justify-content
+//align-items
+@mixin align-items($value) {
+    -webkit-box-align: $value;
+    -moz-box-align: $value;
+    -ms-flex-align: $value;
+    -webkit-align-items: $value;
+    align-items: $value;
+}
+
+//align-content
+
+/* Flex: End */
+
+@mixin justify-content($value) {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+    justify-content: $value;
+}
+
+// Animation
+
+@mixin animation($name, $duration, $timing, $delay, $iteration, $direction, $fillmode, $playstate ) {
+    -webkit-animation: $name $duration $timing $delay $iteration $direction $fillmode $playstate;
+    -moz-animation: $name $duration $timing $delay $iteration $direction $fillmode $playstate;
+    -o-animation: $name $duration $timing $delay $iteration $direction $fillmode $playstate;
+    animation: $name $duration $timing $delay $iteration $direction $fillmode $playstate;
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+
+    @-o-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+// Transition
+
+@mixin transition($elements, $duration, $type, $delay) {
+    -webkit-transition: $elements $duration $type $delay;
+    -o-transition: $elements $duration $type $delay;
+    transition: $elements $duration $type $delay;
+}
+
+// Transformation
+
+@mixin transform-rotate($value) {
+    -webkit-transform: rotate(#{$value}deg);
+    -ms-transform: rotate(#{$value}deg);
+    transform: rotate(#{$value}deg);
+}
+
+/* --------------------------- Vendor Prefix: End --------------------------- */
+
+// Surface Light
+
+@mixin surface-light-bordered {
+    border: 1px solid #e9e9e9;
+    background-color: #f5f5f5;
+}
+
+@mixin surface-light-borderless {
+    background-color: #f5f5f5;
+}
+
+// Surface White
+@mixin surface-white-bordered {
+    border: 1px solid #e9e9e9;
+    background-color: #fff;
+}
+
+@mixin surface-white-borderless {
+    background-color: #fff;
+}

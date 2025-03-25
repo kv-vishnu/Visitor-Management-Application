@@ -1,0 +1,21 @@
+.thead-light {
+    background: #e5e5e5;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.qty-group {
+    width: 70px;
+}
+
+.qty-group input {
+    background: #eeeef9;
+    color: #0a0a0a;
+    padding: 0px;
+    font-size: 25px;
+}
+
+.btn-orange {
+    background-color: #ff6000;
+    color: #fff;
+}

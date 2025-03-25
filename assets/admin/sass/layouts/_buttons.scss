@@ -1,0 +1,461 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+
+// Button Default
+.btn1 {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: $brand-color1;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: 0.438rem !important;
+    column-gap: 1rem;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    box-shadow: none;
+    border: 0;
+    width: auto;
+
+    &:hover {
+        color: #fff;
+    }
+
+    @include md-min {
+        height: 3.125rem;
+        line-height: 3.125rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 0.938rem;
+    }
+}
+
+.btn1-small {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: $brand-color1;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: .5rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    box-shadow: none;
+    border: 0;
+    width: auto;
+
+    &:hover {
+        color: white;
+    }
+
+    @include md-min {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+
+
+.btn2 {
+    height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: $brand-color2;
+    color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: 0.438rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+    border: 0;
+    width: auto;
+
+    &:hover {
+        color: #fff;
+    }
+
+    @include md-min {
+        height: 3.125rem;
+        line-height: 3.125rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 0.938rem;
+    }
+}
+
+.btn2-small {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: $brand-color2;
+    color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: .5rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+    border: 0;
+    width: auto;
+
+    &:hover {
+        color: #fff;
+    }
+
+    @include md-min {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 0.938rem;
+    }
+}
+
+
+
+
+// Button 3
+
+.btn3 {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: $brand-color3;
+    color: #fff !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: 0.438rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+    border: 0;
+    width: auto;
+
+    @include md-min {
+        height: 3.125rem;
+        line-height: 3.125rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 0.938rem;
+    }
+}
+
+
+.btn3-small {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: $brand-color3;
+    color: #fff !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: .5rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+    border: 0;
+    width: auto;
+
+    @include md-min {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Button4: Start */
+
+.btn4 {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: #f5ab07;
+    color: #fff !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: 0.438rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    box-shadow: none;
+    width: auto;
+
+    @include md-min {
+        height: 3.125rem;
+        line-height: 3.125rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.btn4-small {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: #f5ab07;
+    color: #fff !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: .5rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    box-shadow: none;
+    width: auto;
+
+    @include md-min {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Button4: End */
+
+
+/* Button5: Start */
+
+.btn5 {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: #ff6000;
+    color: #fff !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: 0.438rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    box-shadow: none;
+    width: auto;
+
+    @include md-min {
+        height: 3.125rem;
+        line-height: 3.125rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.btn5-small {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: #ff6000;
+    color: #fff !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: .5rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    box-shadow: none;
+    width: auto;
+
+    @include md-min {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Button5: End */
+
+
+/* Button6: Start */
+
+.btn6 {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: linear-gradient(0deg, #efefef, #fff);
+    color: #555 !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: 0.438rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    box-shadow: none;
+    width: auto;
+
+    @include md-min {
+        height: 3.125rem;
+        line-height: 3.125rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.btn6-small {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: linear-gradient(0deg, #efefef, #fff);
+    color: #555 !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: .5rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    box-shadow: none;
+    width: auto;
+
+    @include md-min {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Button6: End */
+
+
+/* Button7: Start */
+
+.btn7 {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    background: #878787;
+    color: #fff !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    border-radius: 0.438rem;
+    column-gap: 1rem;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    box-shadow: none;
+    width: auto;
+
+    @include md-min {
+        height: 3.125rem;
+        line-height: 3.125rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    &-small {
+        height: 2.5rem;
+        line-height: 2.5rem;
+        padding-left: 0.938rem;
+        padding-right: 0.938rem;
+        background: #878787;
+        color: #fff !important;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.875rem;
+        border-radius: .5rem;
+        column-gap: 1rem;
+        font-weight: 600;
+        border: 0;
+        cursor: pointer;
+        box-shadow: none;
+        width: auto;
+
+        @include md-min {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+}
+
+
+
+/* Button7: End */
+
+
+/* Emigo Close Button : Start */
+.emigo-close-btn {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff6000;
+    border: 0;
+    border-radius: .25rem;
+    /* Make the button round */
+    padding: 1rem;
+    /* Add padding inside the button */
+    box-sizing: border-box;
+    /* Ensures padding doesn't affect the outer size */
+    margin-left: auto;
+    opacity: 1 !important;
+}
+
+.emigo-close-btn:after,
+.emigo-close-btn:before {
+    content: '';
+    position: absolute;
+    width: 1.5rem;
+    /* Cross lines are 1rem wide */
+    height: 0.2rem;
+    /* Make the cross thin */
+    background-color: white;
+    transition: all 0.25s ease 0s;
+    transform-origin: center;
+}
+
+.emigo-close-btn:after {
+    transform: rotate(-45deg);
+}
+
+.emigo-close-btn:before {
+    transform: rotate(45deg);
+}
+
+
+/* Emigo Close Button : End */

@@ -1,0 +1,51 @@
+@use 'sass:list';
+
+$no-margin-padding: (
+    top,
+    right,
+    bottom,
+    left
+);
+
+/* No Padding: Start */
+@for $i from 1 through 4 {
+    .no-padding-#{list.nth($no-margin-padding, $i)} {
+        padding-#{list.nth($no-margin-padding, $i)}: 0;
+    }
+}
+
+/* No Padding: End */
+
+/* No Margin: Start */
+@for $i from 1 through 4 {
+    .no-margin-#{list.nth($no-margin-padding, $i)} {
+        margin-#{list.nth($no-margin-padding, $i)}: 0;
+    }
+}
+
+/* No Margin: End */
+
+/* Text Aligns: Start */
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Text Aligns: End */
+
+/* Text Truncator: Start */
+@mixin text-truncator($line-height, $maxlines) {
+    line-height: $line-height;
+    max-height: $line-height * $maxlines * 0.625rem;
+    overflow-y: hidden;
+}
+
+/* Text Truncator: End */

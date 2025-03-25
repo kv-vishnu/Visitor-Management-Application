@@ -1,0 +1,40 @@
+ADMIN - http://localhost/emigo-restaurant-application/admin/login 
+username : emigo
+Password : admin
+
+SHOP OWNER - http://localhost/emigo-restaurant-application/admin/login 
+username : mehrab
+Password : admin
+
+
+SHOP LINK TABLE-3
+http://localhost/emigo-restaurant-application/website/products/2025022783/0
+http://localhost/emigo-restaurant-application/website/products/2025030784/0
+
+PICKUP
+http://localhost/emigo-restaurant-application/website/products/shop/41/PK/0
+
+DELIVERY
+http://localhost/emigo-restaurant-application/website/products/shop/41/DL/0
+
+Secret code - 9876
+
+
+SUPPLIER USERS
+alan admin
+eldho admin
+
+KITCHEN
+siva admin
+
+
+
+
+
+PENDING TASKS
+Reports user vice
+Stock checking
+Delete stock management from order items listing
+customisable out of stock
+Table tab full click if order count there click table not displaying
+testttttt

@@ -1,0 +1,44 @@
+#goToTop {
+    padding: 10px 15px;
+    background-color: #F44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#goToTop:hover {
+    background-color: #F44336;
+}
+
+.image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+#imageEditor {
+    display: none;
+    /* position: fixed; */
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1111;
+    width: 50%;
+    margin: 0 auto;
+}

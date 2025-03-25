@@ -1,0 +1,55 @@
+html {
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+}
+
+.navbar-brand-box {
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+.navbar-brand-box .logo-lg img {
+  margin-left: -30px;
+}
+
+#sidebar-menu > ul > li > a span {
+  margin-left: 20px;
+}
+
+#sidebar-menu > ul > li {
+  position: relative;
+}
+#sidebar-menu > ul > li:hover > a {
+  display: block;
+}
+#sidebar-menu > ul > li:hover > a::after {
+  content: "" !important;
+  display: block !important;
+  width: 192px;
+  height: 50px;
+  border: 1px solid #eee !important;
+  position: absolute;
+  top: 0;
+  left: 70px;
+  border-left: 0 !important;
+}
+#sidebar-menu > ul > li > a {
+  position: relative;
+}
+#sidebar-menu > ul > li > a:hover::after {
+  content: "";
+  display: block;
+  width: 192px;
+  height: 50px;
+  border: 1px solid #eee !important;
+  position: absolute;
+  top: 0;
+  left: 70px;
+  border-left: 0 !important;
+}
+
+.sidebar-enable #sidebar-menu > ul > li:hover > a::after {
+  display: none !important;
+}
+
+/*# sourceMappingURL=admin-custom-styles.css.map */

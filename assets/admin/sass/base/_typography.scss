@@ -1,0 +1,157 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+/* Web Font: Start */
+/* thin */
+@font-face {
+    font-family: 'poppins';
+    src: url('../../fonts/poppins-thin.woff2') format('woff2'),
+        url('../../fonts/poppins-thin.woff') format('woff');
+    font-weight: 100;
+}
+
+/* extralight */
+@font-face {
+    font-family: 'poppins';
+    src: url('../../fonts/poppins-extralight.woff2') format('woff2'),
+        url('../../fonts/poppins-extralight.woff') format('woff');
+    font-weight: 200;
+}
+
+/* light */
+@font-face {
+    font-family: 'poppins';
+    src: url('../../fonts/poppins-light.woff2') format('woff2'),
+        url('../../fonts/poppins-light.woff') format('woff');
+    font-weight: 300;
+}
+
+/* regular */
+@font-face {
+    font-family: 'poppins';
+    src: url('../../fonts/poppins-regular.woff2') format('woff2'),
+        url('../../fonts/poppins-regular.woff') format('woff');
+    font-weight: 400;
+}
+
+/* medium */
+@font-face {
+    font-family: 'poppins';
+    src: url('../../fonts/poppins-medium.woff2') format('woff2'),
+        url('../../fonts/poppins-medium.woff') format('woff');
+    font-weight: 500;
+}
+
+/* semibold */
+@font-face {
+    font-family: 'poppins';
+    src: url('../../fonts/poppins-semibold.woff2') format('woff2'),
+        url('../../fonts/poppins-semibold.woff') format('woff');
+    font-weight: 600;
+}
+
+/* bold */
+@font-face {
+    font-family: 'poppins';
+    src: url('../../fonts/poppins-bold.woff2') format('woff2'),
+        url('../../fonts/poppins-bold.woff') format('woff');
+    font-weight: 700;
+}
+
+/* extrabold */
+// @font-face {
+//     font-family: 'poppins';
+//     src: url('../../fonts/poppins-extrabold.woff2') format('woff2'),
+//         url('../../fonts/poppins-extrabold.woff') format('woff');
+//     font-weight: 800;
+// }
+
+/* black */
+// @font-face {
+//     font-family: 'poppins';
+//     src: url('../../fonts/poppins-black.woff2') format('woff2'),
+//         url('../../fonts/poppins-black.woff') format('woff');
+//     font-weight: 900;
+// }
+
+/* Web Font: End */
+
+h1 {
+    font-size: 1.25rem;
+    margin-bottom: 0.625rem;
+    font-weight: 600 !important;
+}
+
+/* Adjust as needed */
+h2 {
+    font-size: 1rem;
+    margin-bottom: 0.781rem;
+    font-weight: 600 !important;
+
+    @include xl-min {
+        margin-bottom: 1.875rem;
+    }
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 600 !important;
+}
+
+h4 {
+    font-size: 0.875rem;
+    font-weight: 600 !important;
+}
+
+h5 {
+    font-size: 0.75rem;
+    font-weight: 600 !important;
+}
+
+h6 {
+    font-size: 0.625rem;
+    font-weight: 600 !important;
+}
+
+
+p {
+    margin-bottom: 1em;
+    line-height: 1.5;
+    // font-size: 1rem;
+}
+
+
+
+// heading with colors
+
+
+
+.heading1 {
+    font-size: 0.781rem;
+    color: white;
+
+    &__second-color {
+        color: $brand-color2;
+    }
+}
+
+.heading2 {
+    font-size: 0.781rem;
+    color: $brand-color1;
+
+    @include md-min {
+        font-size: 2.3rem;
+    }
+
+    @include xl-min {
+        font-size: 1.563rem;
+    }
+
+    &__color1 {
+        color: $brand-color1;
+    }
+
+    &__color2 {
+        color: $brand-color2;
+    }
+}

@@ -1,0 +1,61 @@
+// $border-radius: 30px;
+
+
+
+/* Color Scheme: Start */
+
+// Brand Color1
+$brand-color1: #5d7ac9;
+$brand-color1-dark: #1c3d7e;
+$brand-color1-light: #6586db;
+// Brand Color2
+$brand-color2: #5bcd48;
+// Brand Color3
+$brand-color3: #57bdc3;
+$brand-color4: #F55336;
+
+/* Color Scheme: End */
+
+/* Surface: Start */
+
+$surface-light: #f7f7f7;
+
+/* Surface: End */
+
+/* Media Queries: Start */
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+/* Media Queries: End */
+
+/* Border Radius: Start */
+
+$border-radius: 0.313rem;
+
+/* Border Radius: End */
+
+/* Backgrounds: Start */
+
+$light-gray1: #e0e0e0;
+$light-gray2: #eeeeee;
+$light-gray3: #f5f5f5;
+
+/* Backgrounds: End */
+
+/* Content Section: Top & Bottom Padding: Start */
+
+$content-section-t-b-p: (
+    'xs': 0.625rem,
+    'sm': 0.938rem,
+    'md': 0.781rem,
+    'lg': 1.563rem,
+    'xl': 3.7rem
+);
+
+/* Content Section: Top & Bottom Padding: End */
+
+$border-radius-xs: 0.313rem;

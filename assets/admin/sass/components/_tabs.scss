@@ -1,0 +1,123 @@
+@use '../abstracts/mixins' as *;
+
+.tabs {
+    margin: 0;
+}
+
+.tabs__nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+.tabs__nav>li {
+    height: auto;
+}
+
+.tabs__nav>li>a {
+    line-height: 1.42857143;
+    border: 1px solid #ddd;
+    background: #efefef;
+    height: 3.125rem;
+    display: flex;
+    align-items: center;
+    padding-left: 0.813rem;
+    padding-right: 0.813rem;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+.tabs__nav>li>a:hover {}
+
+.tabs__nav>li.active {
+    color: #555;
+    cursor: default;
+    background-color: #f9f9f9;
+}
+
+.tabs__nav>li.active a {
+    color: #555;
+    cursor: default;
+    background-color: #f9f9f9;
+    border-bottom-color: transparent;
+}
+
+.tabs__nav>li.active a:hover,
+.tabs__nav>li.active a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+.tabs__content {
+    float: left;
+    width: 100%;
+    background: #F9F9F9;
+    border: 1px solid #ddd;
+    margin-top: -1px;
+}
+
+.tabs__content>.tabs__pane {
+    display: none;
+}
+
+.tabs__content>.tabs__pane.active {
+    display: block;
+    padding: 2.5% 3.5%;
+}
+
+.tabs__content .active {
+    display: block;
+}
+
+
+
+/*# sourceMappingURL=styles.css.map */
+
+// Order Dashboard: Start
+.orderdashboard-tab {
+    &__content {
+        padding: 0.625rem;
+        min-height: 18.75rem;
+        border-bottom-left-radius: .7em;
+        border-bottom-right-radius: 0.438rem;
+    }
+
+
+    .tabs__nav {
+        li {
+            a {
+                font-size: 0.875rem;
+                border-right: 0;
+
+                @include md-min {
+                    padding-left: 1.875rem;
+                    padding-right: 1.875rem;
+                }
+
+                @include xl-min {
+                    padding-left: 3.125rem;
+                    padding-right: 3.125rem;
+                    height: 3.125rem;
+                    font-size: 1rem;
+                }
+            }
+
+            &:first-child {
+                a {
+                    border-top-left-radius: 0.625rem;
+                }
+            }
+
+            &:last-child {
+                a {
+                    border-top-right-radius: 0.625rem;
+                }
+            }
+        }
+    }
+}

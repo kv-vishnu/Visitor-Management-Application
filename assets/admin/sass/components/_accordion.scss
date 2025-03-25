@@ -1,0 +1,99 @@
+@use '../abstracts/mixins' as *;
+
+.accordion {
+    background: #f1f1f1;
+    padding: 0.781rem;
+    border-radius: 0.625rem;
+
+    &__two-column {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.625rem;
+
+        @include xl-min {
+            flex-wrap: nowrap;
+        }
+
+        .accordion__column {}
+    }
+
+    &__items {
+        margin-bottom: 0.625rem;
+    }
+
+    &__trigger {
+        background-color: #fff;
+        color: #444;
+        cursor: pointer;
+        padding: 0.813rem;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+        display: flex;
+        font-weight: 600;
+        column-gap: 0.625rem;
+        align-items: center;
+        border-radius: 0.313rem;
+        line-height: 0.781rem;
+
+        &::before {
+            content: "\002B";
+            color: #333;
+            font-weight: normal;
+            font-size: 1.563rem;
+            position: relative;
+            top: -.25rem;
+        }
+
+        &.active {
+            background-color: #fff;
+
+            &::before {
+                content: "\2212";
+            }
+        }
+    }
+
+    &__content {
+        padding: 0;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease-out;
+    }
+
+    &__content-data {
+        padding: 0.813rem;
+        padding-left: 3.90rem;
+        padding-top: 0;
+        line-height: 1.25;
+        font-size: 0.938rem;
+    }
+}
+
+
+.accordion__two-column {
+    display: flex;
+    gap: 0.625rem;
+    /* Add space between the two columns */
+}
+
+.accordion__column {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    flex: 1;
+
+    .accordion__items {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.accordion__items {
+    margin-bottom: 0.625rem;
+    /* Optional: to add space between items */
+}

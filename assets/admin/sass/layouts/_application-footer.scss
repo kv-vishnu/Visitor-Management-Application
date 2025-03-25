@@ -1,0 +1,121 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+
+.application-footer {
+    padding-bottom: 0.781rem;
+    background: #f9f9f9;
+    margin-top: 1.875rem;
+    border-top: 1px solid #ddd;
+    padding-top: 1.875rem;
+    padding-bottom: 3.125rem;
+
+    &__company-logo {
+        width: 8.125rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include xl-min {
+            margin-right: auto;
+            margin-left: initial;
+            width: 10.625rem;
+        }
+    }
+
+    &__company-logo-img {}
+
+    &__container {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 0.938rem;
+
+        @include md-min {
+            justify-content: initial;
+            grid-template-columns: auto 1fr 1fr;
+        }
+
+        @include xl-min {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    &__copyright {
+        font-size: 0.625rem;
+        text-align: center;
+        grid-row-start: 3;
+
+        @include md-min {
+            grid-row-start: initial;
+            margin-top: auto;
+            margin-bottom: 0.625rem;
+        }
+    }
+
+    &__help-desk {
+        display: grid;
+        border: 1px solid #bbb;
+        grid-template-columns: 6.25rem 1fr;
+        border-radius: 0.438rem;
+        background: white;
+
+        @include sm-min {
+            width: 26rem;
+        }
+
+        @include md-min {
+            width: 20rem;
+            margin-left: auto;
+        }
+
+        @include xl-min {
+            margin-left: auto;
+        }
+    }
+
+    &__help-desk-email {
+        align-items: center;
+        display: flex;
+        padding-left: 0.625rem;
+        column-gap: 0.625rem;
+    }
+
+    &__help-desk-email-icon {}
+
+    &__help-desk-email-link {}
+
+    &__help-desk-label {
+        border-right: 1px solid #bbb;
+        padding: .75rem;
+        text-align: center;
+        gap: 0.625rem;
+        display: grid;
+    }
+
+    &__help-desk-label-icon {
+        width: 3.125rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__help-desk-label-text {}
+
+    &__help-desk-number {
+        border-bottom: 1px solid #bbb;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 0.625rem;
+        column-gap: 0.625rem;
+    }
+
+    &__help-desk-number-and-email {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__help-desk-number-icon {}
+
+    &__help-desk-number-link {}
+}

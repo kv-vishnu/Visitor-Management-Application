@@ -1,0 +1,128 @@
+@use '../abstracts/mixins' as *;
+
+// Course Search
+.product-search {
+    margin-bottom: 0.625rem;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    margin-top: 0.625rem;
+
+    @include xl-min {
+        margin: 0;
+        flex-grow: 1;
+        top: 0;
+    }
+
+    &__form {
+        position: relative;
+        border: 2px solid #cdcdcd;
+        display: flex;
+        flex-grow: 1;
+        border-radius: 0.313rem;
+        padding: 0.313rem;
+        background: white;
+
+        @include xl-min {
+            border-radius: .75rem;
+        }
+    }
+
+    &__field {
+        height: auto;
+        padding-left: 0.625rem;
+        flex-grow: 1;
+        border: none;
+        border: none;
+        outline: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        line-height: 0.781rem;
+        font-family: inherit;
+        color: #666;
+        font-size: 1rem;
+
+        @include xl-min {
+            height: 2.25rem;
+            font-size: 1rem;
+        }
+    }
+
+    &__button {
+        border: 0;
+        background: #fff;
+        cursor: pointer;
+        padding-right: 0.85rem;
+    }
+}
+
+
+/* Search Auto Complete: Start */
+
+// #autocomplete-results2,
+// #autocomplete-results3 {
+//     margin-top: -3px;
+// }
+
+.autocomplete-container-one {
+    // width: 300px;
+}
+
+.autocomplete-input {
+    background: white;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    padding: 20px 15px;
+    border: pink;
+    outline: none;
+    color: black;
+    font-size: 20px;
+    border: 1px solid #cdcdcd;
+}
+
+.autocomplete-input-one {
+    color: grey;
+}
+
+.autocomplete-results {
+    display: none;
+    width: 100%;
+    margin-top: 1px;
+    color: #666;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 0;
+    position: absolute;
+    top: 100%;
+    background: #fafafa;
+    border-radius: 0.35rem;
+    z-index: 2;
+    left: 0;
+
+    li {
+        padding: 0.625rem 1.063rem;
+        border-right: 1px solid #dcdcdc;
+        border-left: 1px solid #dcdcdc;
+        font-size: 1rem;
+
+        &:first-child {
+            border-top-right-radius: 0.25rem;
+            border-top: 1px solid #dcdcdc;
+            border-top-left-radius: 0.25rem;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom: 1px solid #dcdcdc;
+        }
+
+        &:hover {
+            background: #fff;
+            color: #666;
+        }
+    }
+}
+
+/* Search Auto Complete: End */

@@ -1,0 +1,27 @@
+html {
+    font-family: "poppins", Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: "poppins", Arial, Helvetica, sans-serif;
+}
+
+.popup-container {
+    padding: 2rem;
+    font-family: "poppins", Arial, Helvetica, sans-serif;
+
+    &__heading {
+        background: #e7e7e7;
+        padding: 0.625rem;
+        border-radius: 0.313rem;
+        color: #333;
+        border: 1px solid #cdcdcd;
+        margin-bottom: 0.781rem;
+        font-size: 1.3rem;
+        font-family: "poppins", Arial, Helvetica, sans-serif;
+    }
+}
+
+.form-label {
+    font-size: 1rem;
+}
