@@ -15,9 +15,13 @@ class Enquirymodel extends CI_Model {
 	}
 
 	public function insert_enquiry($data){
-		$this->db->insert('tbl_enquiry', $data);
+		$this->db->where('email', $this->input->post('email'));
+		$query = $this->db->get('tbl_enquiry');
+
+		if ($query->num_rows() == 0) {
+			$this->db->insert('tbl_enquiry', $data);
+		}
 	}
-/*************  ✨ Codeium Command ⭐  *************/
 	/**
 	 * Gets the product details from store_wise_product_assign and product tables
 	 * by the given product ID.
@@ -26,7 +30,6 @@ class Enquirymodel extends CI_Model {
 	 *
 	 * @return array The product details
 	 */
-/******  745a5263-a7c9-4d48-8367-d18106d05b28  *******/
 
 	public function getEnquiryDetailsById($id){
 		$this->db->select('

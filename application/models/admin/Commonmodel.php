@@ -19,10 +19,18 @@ Class Commonmodel extends CI_Model
 
     public function list_purposes() {
         $array = array(
-            1 => 'Seminar',
-            2 => 'Meetings' 
+            'seminar' => 'Seminar',
+            'meetings' => 'Meetings' 
         );
         return $array;
+    }
+    public function get_company_name($id) {
+        $this->db->select('company_name');
+        $this->db->from('tbl_company');
+        $this->db->where('n_id', $id);
+        $query = $this->db->get();
+        $row = $query->row_array();
+        return $row['company_name'];
     }
 
 

@@ -1,7 +1,7 @@
 <div class="application-content dashboard-content">
     <div class="application-content__container container">
         <div class="search-add-new-dish-list-combo">
-            <form class="product-search__form search">
+            <!-- <form class="product-search__form search">
                 <input type="text" id="search_product" placeholder="Search for a product" name="search"
                     class="product-search__field search-input1">
                 <button type="submit" class="product-search__button"><img
@@ -9,9 +9,9 @@
                         height="23" alt="SearchIcon" class="product-search__icon"></button>
                 <ul id="autocomplete-results1" class="autocomplete-results">
                 </ul>
-            </form>
+            </form> -->
             <div class="add-new-dish-list-combo">
-                <a href="<?php echo base_url('admin/enquiry/add'); ?>" class="add-new-dish-btn btn1">
+                <a href="<?php echo base_url('admin/enquiry/add/6'); ?>" class="add-new-dish-btn btn1">
                     <img src="<?php echo base_url(); ?>assets/admin/images/add-new-dish-icon.svg" alt="add new dish"
                         class="add-new-dish__icon" width="23" height="23">
                     New Enquiry
@@ -20,50 +20,44 @@
 
         </div>
 
-        <div class="enquiry-list header mt-3">
-            <div>Sl</div>
-            <div>Name</div>
-            <div>Phone Number</div>
-            <div>Email</div>
-            <div>Company</div>
-            <div>Purpose</div>
-            <div>Actions</div>
-            <div></div>
-        </div>
-
-        <div class="enquiry-list">
-            <?php
-            if(!empty($enquiries)){
+        <div class="table-responsive">
+            <table class="table table-bordered mt-3">
+                <thead class="table-light">
+                    <tr>
+                        <th>Sl</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Company</th>
+                        <th>Purpose</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (!empty($enquiries)) { 
                 $count = 1;
-                foreach($enquiries as $val){
-             ?>
-            <div class="enq_item">
-                <div><?php echo $count ?></div>
-                <div><?php echo $val['visitor_name']; ?></div>
-                <div><?php echo $val['phone_number']; ?></div>
-                <div><?php echo $val['email']; ?></div>
-                <div><?php echo "test"; ?></div>
-                <div><?php echo $val['purpose_of_visit']; ?></div>
-
-                <div class="product-list__item-buttons-block-two">
-                    <a data-bs-toggle="modal" data-bs-target="#Edit-dish" data-id="<?php echo $val['id']; ?>"
-                        data-isCustomizable="1" href=""
-                        class="product-list__item-buttons-block-btn btn6 edit-btn product-list__item-buttons-block-edit-btn"><img
-                            class="product-list__item-button-img"
-                            src="<?php echo base_url(); ?>assets/admin/images/edit-dish-icon.svg" alt="add stock"
-                            width="23" height="22">View </a>
-
-                </div>
-
-                <div><a data-bs-toggle="modal" data-bs-target="#Edit-dish" data-id="<?php echo $val['id']; ?>"
-                        data-isCustomizable="1" href=""
-                        class="product-list__item-buttons-block-btn btn6 edit-btn product-list__item-buttons-block-edit-btn"><img
-                            class="product-list__item-button-img"
-                            src="<?php echo base_url(); ?>assets/admin/images/edit-dish-icon.svg" alt="add stock"
-                            width="23" height="22">Delete </a></div>
-            </div>
-            <?php $count++; } } ?>
-
+                foreach ($enquiries as $val) { ?>
+                    <tr>
+                        <td><?php echo $count; ?></td>
+                        <td><?php echo htmlspecialchars($val['visitor_name']); ?></td>
+                        <td><?php echo htmlspecialchars($val['phone_number']); ?></td>
+                        <td><?php echo htmlspecialchars($val['email']); ?></td>
+                        <td><?php echo htmlspecialchars($this->Commonmodel->get_company_name($val['company_id'])); ?>
+                        </td>
+                        <td><?php echo htmlspecialchars($val['purpose_of_visit']); ?></td>
+                        <td>
+                            <a data-bs-toggle="modal" data-bs-target="#Edit-dish" data-id="<?php echo $val['id']; ?>"
+                                href="" class="btn btn-success btn-sm edit-btn">View</a>
+                        </td>
+                    </tr>
+                    <?php $count++; } 
+            } else { ?>
+                    <tr>
+                        <td colspan="7" class="text-center">No enquiries found.</td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
         <div class="pagination-wrapper">
             <?= $pagination; ?>
@@ -157,9 +151,8 @@
                                 <label class="col-form-label product_rate_label">Purpose of visit</label>
                                 <select name="purpose_of_visit" id="purpose_of_visit"
                                     class="form-select form__input-select">
-                                    <?php
-                foreach ($purposes as  $value) { ?>
-                                    <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
+                                    <?php foreach ($purposes as $key => $value) { ?>
+                                    <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>

@@ -25,7 +25,7 @@ class Enquiry extends CI_Controller {
         $logged_store_id=$this->session->userdata('logged_in_store_id');
         $config['base_url'] = site_url('admin/Enquiry/index');
         $config['total_rows'] = $this->Enquirymodel->getEnquiryCount();
-        $config['per_page'] = 2; // number of rows per page
+        $config['per_page'] = 10; // number of rows per page
         $config['uri_segment'] = 4; // which URI segment contains the page numberg
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
@@ -81,7 +81,6 @@ class Enquiry extends CI_Controller {
 
     public function save() {
         $this->load->library('form_validation'); 
-        $this->form_validation->set_rules('company_id', 'Company', 'required');
         $this->form_validation->set_rules('purpose_of_visit', 'Purpose of visit', 'required'); 
         $this->form_validation->set_rules('contact_person', 'Contact person', 'required');    
         $this->form_validation->set_rules('visitor_name', 'Name', 'required');   
@@ -98,7 +97,6 @@ class Enquiry extends CI_Controller {
                     'visitor_name' => form_error('visitor_name'),
                     'phone_number' => form_error('phone_number'),
                     'email' => form_error('email'),
-                    'company_id' => form_error('company_id'),
                     'purpose_of_visit' => form_error('purpose_of_visit'),
                     'contact_person' => form_error('contact_person'),
                     'remarks' => form_error('remarks'),
@@ -131,7 +129,7 @@ class Enquiry extends CI_Controller {
 
 
     public function add($id = null) {
-           echo $id;
+            $data['selected_company'] = $id;
             $controller = $this->router->fetch_class(); // Gets the current controller name
             $method = $this->router->fetch_method();   // Gets the current method name
             $data['controller'] = $controller;

@@ -46,23 +46,21 @@
                         <div class="form__field-container-group gc">
                             <div class="form__field-container xs12 lg4">
                                 <label class="form__label">Company</label>
-                                <select class="form__input-select" name="company_id">
+                                <input type="hidden" name="company_id" value="<?= $selected_company; ?>">
+                                <select class="form__input-select" disabled>
                                     <option value="">Select </option>
                                     <?php
                                     foreach($companies as $company)
                                     {
                                     ?>
-                                    <option value="<?=$company['n_id'];?>"
-                                        <?php echo set_select('company_id', $company['n_id'])?>>
-                                        <?=$company['company_name'];?></option>
+                                    <option value="<?= $company['n_id']; ?>"
+                                        <?= ($company['n_id'] == $selected_company) ? 'selected' : set_select('company_id', $company['n_id']); ?>>
+                                        <?= $company['company_name']; ?>
+                                    </option>
                                     <?php
                                     }
                                     ?>
                                 </select>
-                                <div class="form__validation">
-                                    <span id="company_id_error"
-                                        class="error errormsg mt-2"><?= form_error('company_id'); ?></span>
-                                </div>
                             </div>
                             <!-- sub category -->
                             <div class="form__field-container xs12 lg4">

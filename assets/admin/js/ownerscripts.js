@@ -102,8 +102,7 @@ $(document).ready(function () {
                     .email);
                 $('#company_id').val(response.data
                     .company_id);
-                $('#purpose_of_visit').val(response.data
-                    .purpose_of_visit);
+                $('#purpose_of_visit').val(response.data.purpose_of_visit);
                 $('#contact_person').val(response.data
                     .contact_person);
                 $('#remarks').val(response.data
