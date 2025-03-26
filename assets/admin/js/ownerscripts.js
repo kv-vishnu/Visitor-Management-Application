@@ -1,5 +1,7 @@
 //1. Scroll top jquery
 //2.Add enquiry
+//3.Edit Enquiry
+//4.Update Enquiry
 
 $(document).ready(function () {
 
@@ -78,12 +80,11 @@ $(document).ready(function () {
     });
 
 
-    //Edit enquiry details
-    //14.Edit dish popup tab.Get default product tab details 
+    //3.Edit Enquiry
     $(document).on('click', '.edit-btn', function () {
         var id = $(this).attr('data-id');
         $('#hiddenField').val(id);
-        $('#product_id_new').val(id);
+        $('#enquiry_id_new').val(id);
         $.ajax({
             url: base_url + "admin/Enquiry/getEnquiryDetails",
             type: 'POST',
@@ -114,6 +115,80 @@ $(document).ready(function () {
                 alert('An error occurred while fetching data.');
             }
         });
+    });
+
+    //4.Update Enquiry
+    $(document).on('click', '#update-btn', function () {
+        let enquiry_id = $('#enquiry_id_new').val(); // Get product_id value
+        let formData = new FormData($('#productForm')[
+            0]);
+        formData.append('enquiry_id_new', enquiry_id);
+
+        $.ajax({
+            url: base_url + "admin/Enquiry/updateEnquirydetails",
+            type: 'POST',
+            data: formData,
+            dataType: 'json',
+            processData: false, // Prevent jQuery from processing the data
+            contentType: false, // Prevent jQuery from setting the Content-Type header
+            success: function (response) {
+                console.log(response.data);
+
+                if (response.data.errors) {
+                    if (response.errors.visitor_name) {
+                        $('#visitor_name_error').html(response.errors
+                            .visitor_name);
+                    } else if (response.errors.phone_number) {
+                        $('#phone_number_error').html(response.errors
+                            .phone_number);
+                    } else if (response.errors.email) {
+                        $('#email_error').html(response.errors
+                            .email_hindi);
+                    } else if (response.errors.company_id) {
+                        $('#company_id_error').html(response.errors
+                            .company_id);
+                    }
+                    else if (response.errors.purpose_of_visit) {
+                        $('#purpose_of_visit_error').html(response.errors
+                            .purpose_of_visit);
+                    }
+
+                    else if (response.errors.contact_person) {
+                        $('#contact_person_error').html(response.errors
+                            .contact_person);
+                    }
+
+                    else if (response.errors.remarks) {
+                        $('#remarks_error').html(response.errors
+                            .remarks);
+                    }
+
+                    else if (response.errors.visitor_message) {
+                        $('#visitor_message_error').html(response.errors
+                            .visitor_message);
+                    }
+
+                }
+                else {
+                    const customMessage =
+                        "Your Enquiry has been Updated successfully!";
+                    $("#successMessage").text(customMessage).show();
+                    $("#successModal").modal("show");
+                    setTimeout(function () {
+                        $("#successModal").modal("hide");
+                        $("#Edit-dish").modal("hide");
+                        location.reload();
+                    }, 3000);
+
+                }
+            },
+            error: function (xhr) {
+                $('#response').html('<p>An error occurred: ' + xhr
+                    .responseText +
+                    '</p>');
+            }
+        });
+
     });
 
 

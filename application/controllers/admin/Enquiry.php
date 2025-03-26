@@ -25,7 +25,7 @@ class Enquiry extends CI_Controller {
         $logged_store_id=$this->session->userdata('logged_in_store_id');
         $config['base_url'] = site_url('admin/Enquiry/index');
         $config['total_rows'] = $this->Enquirymodel->getEnquiryCount();
-        $config['per_page'] = 10; // number of rows per page
+        $config['per_page'] = 2; // number of rows per page
         $config['uri_segment'] = 4; // which URI segment contains the page numberg
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
@@ -53,6 +53,8 @@ class Enquiry extends CI_Controller {
         $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0; // Get the current page number
         //$data['products'] = $this->Enquirymodel->shopAssignedProductsbyPagination($config['per_page'], $page);
         $all_enquiries = $this->Enquirymodel->get_enquiries();
+        $data['all_companies'] = $this->Commonmodel->list_companies();
+        $data['purposes'] = $this->Commonmodel->list_purposes(); //print_r($data['purposes']);
         $data['enquiries'] = array_slice($all_enquiries, $page, $config['per_page']);
         $data['pagination'] = $this->pagination->create_links();
         $date =date('Y-m-d');
@@ -128,7 +130,8 @@ class Enquiry extends CI_Controller {
     }
 
 
-    public function add() {  
+    public function add($id = null) {
+           echo $id;
             $controller = $this->router->fetch_class(); // Gets the current controller name
             $method = $this->router->fetch_method();   // Gets the current method name
             $data['controller'] = $controller;
@@ -179,32 +182,26 @@ class Enquiry extends CI_Controller {
                 'data' => $result
             ]);
     }
-    public function changeDescriptions()
+    public function updateEnquirydetails()
     {
-            $productId = $this->input->post('product_id');
+            $productId = $this->input->post('enquiry_id_new');
 
-            $rate = (float) $this->input->post('store_product_rate');
-            $tax = 5; // Fixed tax percentage
-            $tax_amount = ($rate * $tax) / 100;
-            $total_amount = $rate + $tax_amount;
+                     $data = array(
+                'visitor_name' => $this->input->post('visitor_name'),
+                'phone_number' => $this->input->post('phone_number'),
+                'email' => $this->input->post('email'),
+                'company_id' => $this->input->post('company_id'),
+                'purpose_of_visit' => $this->input->post('purpose_of_visit'),
+                'contact_person' => $this->input->post('contact_person'),
+                'remarks' => $this->input->post('remarks'),
+                'visitor_message' => $this->input->post('visitor_message'),
+                'is_read' => 0
 
-            $data = array(
-                'store_product_name_ma' => $this->input->post('store_product_name_ma'),
-                'store_product_name_en' => $this->input->post('store_product_name_en'),
-                'store_product_name_hi' => $this->input->post('store_product_name_hi'),
-                'store_product_name_ar' => $this->input->post('store_product_name_ar'),
-                'store_product_desc_ma' => $this->input->post('description_malayalam'),
-                'store_product_desc_en' => $this->input->post('description_english'),
-                'store_product_desc_hi' => $this->input->post('description_hindi'),
-                'store_product_desc_ar' => $this->input->post('description_arabic'),
-                'rate' => $rate,
-                'tax' => $tax,
-                'tax_amount' => $tax_amount,
-                'total_amount' => $total_amount
             );
-            $this->Productmodel->update_product_description($data , $this->session->userdata('logged_in_store_id'), $productId);
-            $response = (['success' => 'success']);
-            echo json_encode($response);
+
+               $this->Enquirymodel->update_enquiry_details($data,$productId);
+             $response = (['success' => 'success','data'=>$data]);
+             echo json_encode($response);
     }
 // Function to add a product with translations
 public function categoryname_exists($country)

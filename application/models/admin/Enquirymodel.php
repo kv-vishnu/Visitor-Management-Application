@@ -40,6 +40,12 @@ $query = $this->db->get();//echo $this->db->last_query();exit;
 $row = $query->row_array(); //print_r($row);exit;
 return $row;
 	}
+	public function update_enquiry_details($data,$product_id){
+        $this->db->where('id', $product_id);
+        $this->db->update('tbl_enquiry', $data);
+        // echo $this->db->last_query();
+    }
+
 
 
 

@@ -20,6 +20,7 @@
     <link href="<?php echo base_url();?>assets/admin/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url();?>assets/admin/css/custom.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url();?>assets/admin/css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url();?>assets/admin/css/visitor-custom-styles.css" rel="stylesheet" type="text/css" />
 
 </head>
 

@@ -17,6 +17,14 @@ Class Commonmodel extends CI_Model
         return $query->result_array();
     }
 
+    public function list_purposes() {
+        $array = array(
+            1 => 'Seminar',
+            2 => 'Meetings' 
+        );
+        return $array;
+    }
+
 
 
 

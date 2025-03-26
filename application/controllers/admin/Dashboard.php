@@ -24,7 +24,7 @@ class Dashboard extends CI_Controller {
 		parent::__construct();
 		//require('Common.php');
 		if (!$this->session->userdata('login_status')) {
-			redirect(login);
+			redirect('admin/login');
 		}
 	}
 	public function index()

@@ -1,7 +1,5 @@
 <div class="application-content dashboard-content">
     <div class="application-content__container container">
-        <h1 class="application-content__page-heading">Enquiries</h1>
-
         <div class="search-add-new-dish-list-combo">
             <form class="product-search__form search">
                 <input type="text" id="search_product" placeholder="Search for a product" name="search"
@@ -21,45 +19,55 @@
             </div>
 
         </div>
-        <div class="product-list" id="search_result_container">
 
+        <div class="enquiry-list header mt-3">
+            <div>Sl</div>
+            <div>Name</div>
+            <div>Phone Number</div>
+            <div>Email</div>
+            <div>Company</div>
+            <div>Purpose</div>
+            <div>Actions</div>
+            <div></div>
+        </div>
+
+        <div class="enquiry-list">
             <?php
             if(!empty($enquiries)){
                 $count = 1;
                 foreach($enquiries as $val){
- ?>
-            <div class="product-list__item">
-                <div class="product-list__item-image-and-details">
-                    <div class="product-list__item-details">
-                        <h3 class="product-list__item-name">
-                            <?php echo $val['visitor_name']; ?>
-                        </h3>
-                    </div>
-                </div>
-                <div class="product-list__item-buttons-block">
-                    <div class="product-list__item-buttons-block-two">
-                        <a data-bs-toggle="modal" data-bs-target="#Edit-dish" data-id="<?php echo $val['id']; ?>"
-                            data-isCustomizable="1" href=""
-                            class="product-list__item-buttons-block-btn btn6 edit-btn product-list__item-buttons-block-edit-btn"><img
-                                class="product-list__item-button-img"
-                                src="<?php echo base_url(); ?>assets/admin/images/edit-dish-icon.svg" alt="add stock"
-                                width="23" height="22">View </a>
+             ?>
+            <div class="enq_item">
+                <div><?php echo $count ?></div>
+                <div><?php echo $val['visitor_name']; ?></div>
+                <div><?php echo $val['phone_number']; ?></div>
+                <div><?php echo $val['email']; ?></div>
+                <div><?php echo "test"; ?></div>
+                <div><?php echo $val['purpose_of_visit']; ?></div>
 
-                    </div>
-
-
+                <div class="product-list__item-buttons-block-two">
+                    <a data-bs-toggle="modal" data-bs-target="#Edit-dish" data-id="<?php echo $val['id']; ?>"
+                        data-isCustomizable="1" href=""
+                        class="product-list__item-buttons-block-btn btn6 edit-btn product-list__item-buttons-block-edit-btn"><img
+                            class="product-list__item-button-img"
+                            src="<?php echo base_url(); ?>assets/admin/images/edit-dish-icon.svg" alt="add stock"
+                            width="23" height="22">View </a>
 
                 </div>
+
+                <div><a data-bs-toggle="modal" data-bs-target="#Edit-dish" data-id="<?php echo $val['id']; ?>"
+                        data-isCustomizable="1" href=""
+                        class="product-list__item-buttons-block-btn btn6 edit-btn product-list__item-buttons-block-edit-btn"><img
+                            class="product-list__item-button-img"
+                            src="<?php echo base_url(); ?>assets/admin/images/edit-dish-icon.svg" alt="add stock"
+                            width="23" height="22">Delete </a></div>
             </div>
             <?php $count++; } } ?>
-
-
 
         </div>
         <div class="pagination-wrapper">
             <?= $pagination; ?>
         </div>
-
     </div>
 
 
@@ -116,7 +124,7 @@
                     <form class="product-details-form" id="productForm" method="post" enctype="multipart/form-data">
                         <div class="product-details-form__section product-details-form__section--first">
                             <div class="product-details-form__item">
-                                <input type="hidden" id="product_id_new" name="product_id">
+                                <input type="hidden" id="enquiry_id_new" name="enquiry_id">
                                 <label class="col-form-label product_rate_label">Name</label>
                                 <input type="text" class="form-control form__input-text product_rate" id="visitor_name"
                                     name="visitor_name" value="">
@@ -135,18 +143,28 @@
 
                         <div class="product-details-form__section product-details-form__section--first">
                             <div class="product-details-form__item">
-                                <input type="hidden" id="product_id_new" name="product_id">
-                                <label class="col-form-label product_rate_label">Name</label>
-                                <input type="text" class="form-control form__input-text product_rate" id="company_id"
-                                    name="company_id" value="">
+                                <label class="col-form-label product_rate_label">Company</label>
+                                <select name="company_id" id="company_id" class="form-select form__input-select">
+                                    <?php
+                foreach($all_companies as $val){ ?>
+                                    <option value="<?php echo $val['n_id']; ?>"><?php echo $val['company_name']; ?>
+                                    </option>
+                                    <?php } ?>
+                                </select>
+                                <span class="error errormsg mt-2" id="company_id_error"></span>
                             </div>
                             <div class="product-details-form__item">
-                                <label class="col-form-label">Phone number</label>
-                                <input type="text" class="form-control form__input-text" id="purpose_of_visit"
-                                    name="purpose_of_visit" value="">
+                                <label class="col-form-label product_rate_label">Purpose of visit</label>
+                                <select name="purpose_of_visit" id="purpose_of_visit"
+                                    class="form-select form__input-select">
+                                    <?php
+                foreach ($purposes as  $value) { ?>
+                                    <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
+                                    <?php } ?>
+                                </select>
                             </div>
                             <div class="product-details-form__item">
-                                <label class="col-form-label">Email</label>
+                                <label class="col-form-label">Contact Person</label>
                                 <input type="text" class="form-control form__input-text" id="contact_person"
                                     name="contact_person" value="">
                             </div>
@@ -155,20 +173,18 @@
                         <div class="product-details-form__section">
 
                             <div class="product-details-form__item">
-                                <input type="hidden" id="product_id_new" name="product_id">
-                                <label class="col-form-label product_rate_label">Name</label>
+                                <label class="col-form-label product_rate_label">Remarks</label>
                                 <textarea class="form-control" value="" id="remarks" name="remarks"></textarea>
                             </div>
                             <div class="product-details-form__item">
-                                <input type="hidden" id="product_id_new" name="product_id">
-                                <label class="col-form-label product_rate_label">Name</label>
+                                <label class="col-form-label product_rate_label">Message</label>
                                 <textarea class="form-control" value="" id="visitor_message"
                                     name="visitor_message"></textarea>
                             </div>
                         </div>
 
                         <div class="mt-2 text-center m-auto">
-                            <button class="btn1-small" type="button" id="saveProduct">Save</button>
+                            <button class="btn1-small" type="button" id="update-btn">Update</button>
                         </div>
                 </div>
 
