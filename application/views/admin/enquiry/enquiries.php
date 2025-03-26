@@ -118,18 +118,18 @@
                             <div class="product-details-form__item">
                                 <input type="hidden" id="product_id_new" name="product_id">
                                 <label class="col-form-label product_rate_label">Name</label>
-                                <input type="text" class="form-control form__input-text product_rate"
-                                    id="store_product_rate" name="store_product_rate" value="">
+                                <input type="text" class="form-control form__input-text product_rate" id="visitor_name"
+                                    name="visitor_name" value="">
                             </div>
                             <div class="product-details-form__item">
                                 <label class="col-form-label">Phone number</label>
-                                <input type="text" class="form-control form__input-text" id="store_product_name_ma"
-                                    name="store_product_name_ma" value="">
+                                <input type="text" class="form-control form__input-text" id="phone_number"
+                                    name="phone_number" value="">
                             </div>
                             <div class="product-details-form__item">
                                 <label class="col-form-label">Email</label>
-                                <input type="text" class="form-control form__input-text" id="store_product_name_en"
-                                    name="store_product_name_en" value="">
+                                <input type="text" class="form-control form__input-text" id="email" name="email"
+                                    value="">
                             </div>
                         </div>
 
@@ -137,18 +137,18 @@
                             <div class="product-details-form__item">
                                 <input type="hidden" id="product_id_new" name="product_id">
                                 <label class="col-form-label product_rate_label">Name</label>
-                                <input type="text" class="form-control form__input-text product_rate"
-                                    id="store_product_rate" name="store_product_rate" value="">
+                                <input type="text" class="form-control form__input-text product_rate" id="company_id"
+                                    name="company_id" value="">
                             </div>
                             <div class="product-details-form__item">
                                 <label class="col-form-label">Phone number</label>
-                                <input type="text" class="form-control form__input-text" id="store_product_name_ma"
-                                    name="store_product_name_ma" value="">
+                                <input type="text" class="form-control form__input-text" id="purpose_of_visit"
+                                    name="purpose_of_visit" value="">
                             </div>
                             <div class="product-details-form__item">
                                 <label class="col-form-label">Email</label>
-                                <input type="text" class="form-control form__input-text" id="store_product_name_en"
-                                    name="store_product_name_en" value="">
+                                <input type="text" class="form-control form__input-text" id="contact_person"
+                                    name="contact_person" value="">
                             </div>
                         </div>
 
@@ -157,14 +157,13 @@
                             <div class="product-details-form__item">
                                 <input type="hidden" id="product_id_new" name="product_id">
                                 <label class="col-form-label product_rate_label">Name</label>
-                                <input type="text" class="form-control form__input-text product_rate"
-                                    id="store_product_rate" name="store_product_rate" value="">
+                                <textarea class="form-control" value="" id="remarks" name="remarks"></textarea>
                             </div>
                             <div class="product-details-form__item">
                                 <input type="hidden" id="product_id_new" name="product_id">
                                 <label class="col-form-label product_rate_label">Name</label>
-                                <input type="text" class="form-control form__input-text product_rate"
-                                    id="store_product_rate" name="store_product_rate" value="">
+                                <textarea class="form-control" value="" id="visitor_message"
+                                    name="visitor_message"></textarea>
                             </div>
                         </div>
 

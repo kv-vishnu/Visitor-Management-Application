@@ -64,8 +64,8 @@ $(document).ready(function () {
                     });
                 } else {
                     alert(2);
-                    $(this).prop('disabled', true).text('Processing...');
-                    window.location.href = base_url + "admin/Enquiry/";
+                    // $(this).prop('disabled', true).text('Processing...');
+                    // window.location.href = base_url + "admin/Enquiry/";
                 }
 
             },
@@ -93,22 +93,21 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 console.log(response.data);
-                $('#store_product_rate').val(response.data
-                    .rate);
-                $('#store_product_name_ma').val(response.data
-                    .malayalam_name);
-                $('#store_product_name_en').val(response.data
-                    .english_name);
-                $('#store_product_name_hi').val(response.data
-                    .hindi_name);
-                $('#store_product_name_ar').val(response.data
-                    .arabic_name);
-                $('#description_malayalam').val(response.data
-                    .malayalam_desc);
-                $('#description_english').val(response.data
-                    .english_desc);
-                $('#description_hindi').val(response.data.hindi_desc);
-                $('#description_arabic').val(response.data.arabic_desc);
+                $('#visitor_name').val(response.data
+                    .visitor_name);
+                $('#phone_number').val(response.data
+                    .phone_number);
+                $('#email').val(response.data
+                    .email);
+                $('#company_id').val(response.data
+                    .company_id);
+                $('#purpose_of_visit').val(response.data
+                    .purpose_of_visit);
+                $('#contact_person').val(response.data
+                    .contact_person);
+                $('#remarks').val(response.data
+                    .remarks);
+                $('#visitor_message').val(response.data.visitor_message);
 
             },
             error: function () {

@@ -149,44 +149,26 @@ class Enquiry extends CI_Controller {
     public function getEnquiryDetails() 
     {
             $id = $this->input->post('id');
-            $descriptions = $this->Enquirymodel->getEnquiryDetailsById($id); 
-            print_r($descriptions);exit;
+            $enquiry_details = $this->Enquirymodel->getEnquiryDetailsById($id); 
             
-            // Check if descriptions is valid
-            if (!$descriptions || !is_array($descriptions)) {
+            // Check if enquiry_details is valid
+            if (!$enquiry_details || !is_array($enquiry_details)) {
                 echo json_encode([
                     'success' => false,
-                    'message' => 'Invalid descriptions data.'
+                    'message' => 'Invalid enquiry_details data.'
                 ]);
                 return;
             }
             
             $result = [
-                'rate' => $descriptions['rate'] ?? null,
-                'malayalam_name' => !empty($descriptions['store_product_name_ma']) 
-                    ? $descriptions['store_product_name_ma'] 
-                    : ($descriptions['product_name_ma'] ?? null),
-                'english_name' => !empty($descriptions['store_product_name_en']) 
-                    ? $descriptions['store_product_name_en'] 
-                    : ($descriptions['product_name_en'] ?? null),
-                'hindi_name' => !empty($descriptions['store_product_name_hi']) 
-                    ? $descriptions['store_product_name_hi'] 
-                    : ($descriptions['product_name_hi'] ?? null),
-                'arabic_name' => !empty($descriptions['store_product_name_ar']) 
-                    ? $descriptions['store_product_name_ar'] 
-                    : ($descriptions['product_name_ar'] ?? null),
-                'malayalam_desc' => !empty($descriptions['store_product_desc_ma']) 
-                    ? $descriptions['store_product_desc_ma'] 
-                    : ($descriptions['product_desc_ma'] ?? null),
-                'english_desc' => !empty($descriptions['store_product_desc_en']) 
-                    ? $descriptions['store_product_desc_en'] 
-                    : ($descriptions['product_desc_en'] ?? null),
-                'hindi_desc' => !empty($descriptions['store_product_desc_hi']) 
-                    ? $descriptions['store_product_desc_hi'] 
-                    : ($descriptions['product_desc_hi'] ?? null),
-                'arabic_desc' => !empty($descriptions['store_product_desc_ar']) 
-                    ? $descriptions['store_product_desc_ar'] 
-                    : ($descriptions['product_desc_ar'] ?? null),
+                'visitor_name' => $enquiry_details['visitor_name'] ?? null,
+                'phone_number' => $enquiry_details['phone_number'] ?? null,
+                'email' => $enquiry_details['email'] ?? null,
+                'company_id' => $enquiry_details['company_id'] ?? null,
+                'purpose_of_visit' => $enquiry_details['purpose_of_visit'] ?? null,
+                'contact_person' => $enquiry_details['contact_person'] ?? null,
+                'remarks' => $enquiry_details['remarks'] ?? null,
+                'visitor_message' => $enquiry_details['visitor_message'] ?? null,
             ];
             
             

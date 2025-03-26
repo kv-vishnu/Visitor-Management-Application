@@ -30,6 +30,21 @@
 </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!-- Success message placeholder -->
+                <div id="successMessage" class="alert alert-success" style="display: none;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <button id="goToTop" style="display: none; position: fixed; bottom: 20px; right: 20px;">Top</button>
 

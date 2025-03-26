@@ -15,8 +15,7 @@
                                 <div class="form__field-container add-new-dish-form__proudct-name-description xs12 lg4">
                                     <div class="form__field-container-label-input-group">
                                         <label class="form__label">Name</label>
-                                        <input class="form-control" value="" type="text" placeholder="Malayalam"
-                                            name="visitor_name">
+                                        <input class="form-control" value="" type="text" name="visitor_name">
                                     </div>
                                     <div class="form__validation"><span id="visitor_name_error"
                                             class="error errormsg mt-2"><?= form_error('visitor_name'); ?></span></div>
@@ -81,11 +80,7 @@
 
                             <div class="form__field-container xs12 lg4">
                                 <label class="form__label">Contact Person</label>
-                                <select class="form__input-select" name="contact_person">
-                                    <option value="">Select any</option>
-                                    <option value="veg">Veg</option>
-                                    <option value="non-veg">Non-Veg</option>
-                                </select>
+                                <input class="form-control" value="" type="text" name="contact_person">
                                 <span id="contact_person_error"
                                     class="error errormsg mt-2"><?= form_error('contact_person'); ?></span>
                             </div>
@@ -98,8 +93,7 @@
                                 <div class="form__field-container add-new-dish-form__proudct-name-description xs12 lg6">
                                     <div class="form__field-container-label-input-group">
                                         <label class="form__label">Remarks</label>
-                                        <textarea class="form-control" value="" type="text" placeholder="Malayalam"
-                                            name="remarks"></textarea>
+                                        <textarea class="form-control" value="" type="text" name="remarks"></textarea>
                                     </div>
                                     <div class="form__validation"><span id="remarks_error"
                                             class="error errormsg mt-2"><?= form_error('remarks'); ?></span></div>

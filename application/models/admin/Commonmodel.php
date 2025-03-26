@@ -10,7 +10,6 @@ Class Commonmodel extends CI_Model
         parent::__construct(); 
     }
 
-<<<<<<< HEAD
     public function list_companies() {
         $this->db->select('*');
         $this->db->from('tbl_company');
@@ -24,8 +23,6 @@ Class Commonmodel extends CI_Model
 
 
 
-=======
->>>>>>> b6966d6eaee1ed435ed650c4c63e32449068fee7
     public function get_store_product_details($store_id,$productId)
     {
         $this->db->select('*');
