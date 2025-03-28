@@ -16,7 +16,7 @@ class Loginmodel extends CI_Model {
 	    {
 			$this->db->insert('user_login_logout', [
 				'user_id' => $row->userid,
-				'store_id' => $row->store_id,
+				'company_id' => $row->company_id,
 				'date' => date('Y-m-d'),
 				'login_time' => date('Y-m-d H:i:s'),
 				'logout_time' => '',

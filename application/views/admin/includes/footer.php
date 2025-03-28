@@ -30,20 +30,24 @@
 </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+<!-- Confirmation Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="emigo-modal__heading" id="exampleModalLabel"></h1>
+                <button type="button" class="emigo-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
             <div class="modal-body">
-                <!-- Success message placeholder -->
-                <div id="successMessage" class="alert alert-success" style="display: none;">
-
-                </div>
+                Enquiry saved....
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary reload-close-btn" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
-
+<!-- Confirmation Modal -->
 
 
 <button id="goToTop" style="display: none; position: fixed; bottom: 20px; right: 20px;">Top</button>

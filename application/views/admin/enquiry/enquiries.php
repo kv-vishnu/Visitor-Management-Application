@@ -48,6 +48,8 @@
                         <td>
                             <a data-bs-toggle="modal" data-bs-target="#Edit-dish" data-id="<?php echo $val['id']; ?>"
                                 href="" class="btn btn-success btn-sm edit-btn">View</a>
+                            <a data-bs-toggle="modal" data-bs-target="#Edit-dish" data-id="<?php echo $val['id']; ?>"
+                                href="" class="btn btn-danger btn-sm edit-btn">Delete</a>
                         </td>
                     </tr>
                     <?php $count++; } 
@@ -67,29 +69,6 @@
 
 
 </div>
-
-
-
-<!-- Confirmation Modal -->
-<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="emigo-modal__heading" id="exampleModalLabel">Change Status</h1>
-                <button type="button" class="emigo-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to change the status of this product?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="cancelStatusChange"
-                    data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" id="confirmStatusChange">Confirm</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Confirmation Modal -->
 
 
 
@@ -138,7 +117,8 @@
                         <div class="product-details-form__section product-details-form__section--first">
                             <div class="product-details-form__item">
                                 <label class="col-form-label product_rate_label">Company</label>
-                                <select name="company_id" id="company_id" class="form-select form__input-select">
+                                <select name="company_id" id="company_id" class="form-select form__input-select"
+                                    disabled>
                                     <?php
                 foreach($all_companies as $val){ ?>
                                     <option value="<?php echo $val['n_id']; ?>"><?php echo $val['company_name']; ?>
@@ -187,76 +167,3 @@
     </div>
 </div>
 <!-- end -->
-
-
-
-<div class="emigo-modal modal fade" id="nextavailabletime" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header emigo-modal__header">
-                <h1 class="emigo-modal__heading" id="exampleModalLabel">Next Available Time</h1>
-                <button type="button" class="emigo-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body emigo-modal__body">
-                <!-- if response within jquery -->
-                <div class="message d-none" role="alert"></div>
-                <!-- if response within jquery -->
-                <form id="avialablestimes" method="post" enctype="multipart/form-data">
-                    <input type="hidden" class="form-control" id="product_id_time" value="">
-                    <div class="col-12">
-                        <label for="exampleSelect" class="form-label">Select an Option</label>
-                        <select class="form-select form__input-select" id="available_select" style="margin-bottom:1rem">
-                            <option value="Available Morning">Available Morning</option>
-                            <option value="Available Afternoon">Available Afternoon</option>
-                            <option value="Available Night">Available Night</option>
-                        </select>
-                    </div>
-                    <div class="col-12">
-                        <label class="form-label" for="default-input">Available Time</label>
-                        <!-- <input type="text" class="form-control" name="name" id="time" value=""> -->
-                        <div class="emigo-modal__time-container time-container d-flex ">
-                            <!-- Hour Input -->
-                            <input type="number" class="form-control form__input-text mx-1" id="hours" min="1" max="12"
-                                value="12">
-                            <input type="number" class="form-control form__input-text mx-1" id="minutes" min="0"
-                                max="59" value="00">
-                            <!-- AM/PM Dropdown -->
-                            <select class="form-select form__input-select" id="ampm">
-                                <option value="AM">AM</option>
-                                <option value="PM">PM</option>
-                            </select>
-                        </div>
-                    </div>
-                    <!-- <input type="text" class="form-control mt-2" placeholder="Enter your Quanity" name="sl_qty"
-                        id="remove_stocks" value=""> -->
-                    <span class="error errormsg mt-2" id="removestocks_error"></span>
-                </form>
-                <!-- <h1>addons</h1> -->
-                <div class="mt-2 text-center m-auto">
-                    <button class="btn1-small " type="button" id="nextavaialabletimes">Update</button>
-                </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <!-- Success message placeholder -->
-                <div id="successMessage" class="alert alert-success" style="display: none;">
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

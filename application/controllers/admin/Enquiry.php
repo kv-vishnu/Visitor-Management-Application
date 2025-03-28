@@ -120,10 +120,8 @@ class Enquiry extends CI_Controller {
                 'is_read' => 0
             );
 
-            if($this->Enquirymodel->insert_enquiry($data)){
-                $response = (['success' => 'success']);
-                echo json_encode($response);
-            }
+            $this->Enquirymodel->insert_enquiry($data);
+            echo json_encode(['success' => 'success']);
         }
     }
 

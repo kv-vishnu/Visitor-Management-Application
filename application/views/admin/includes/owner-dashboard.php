@@ -12,13 +12,9 @@
         </li>
 
         <li class="application-navigation__li">
-            <a href="<?php echo base_url('admin/reports'); ?>"
-                class="application-navigation__a <?php echo ($controller == 'reports') ? 'application-navigation__a--active' : ''; ?>">Reports</a>
+            <a href="<?php echo base_url('admin/users/index/0'); ?>"
+                class="application-navigation__a <?php echo ($controller == 'users') ? 'application-navigation__a--active' : ''; ?>">Companies</a>
         </li>
-        <!-- <li class="application-navigation__li">
-            <a href="<?php echo base_url('admin/settings'); ?>"
-                class="application-navigation__a <?php echo ($controller == 'settings') ? 'application-navigation__a--active' : ''; ?>">Settings</a>
-        </li> -->
 
         <li class="application-navigation__li">
             <a href="<?php echo base_url('admin/login/logout'); ?>" class="application-navigation__a">Logout</a>

@@ -44,7 +44,7 @@ class Login extends CI_Controller {
 			if($data!="")
 			{
 				$loginName=$data[0]['Name'];
-				$store_id=$data[0]['store_id']; //login user store id
+				$store_id=$data[0]['company_id']; //login user store id
 				$loginusername=$data[0]['userName'];//Username of current login user
 			 	$loginid=$data[0]['userid'];//Id of current login user
 				$roleid=$data[0]['userroleid'];//Role of current login user
@@ -161,7 +161,7 @@ class Login extends CI_Controller {
 	{
 	    $this->db->set('logout_time', date('Y-m-d H:i:s'))
         ->where('user_id', $this->session->userdata('loginid'))
-        ->where('store_id', $this->session->userdata('logged_in_store_id'))
+        ->where('company_id', $this->session->userdata('logged_in_store_id'))
         ->update('user_login_logout');
 		$this->session->sess_destroy();
 		redirect('admin/login');
